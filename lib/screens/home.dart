@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:soft_skills/components/my_card.dart';
 import 'package:soft_skills/components/my_drawer.dart';
 import 'package:soft_skills/models/Chapter.dart';
+import 'package:soft_skills/screens/chapter.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,11 +18,25 @@ class HomeScreen extends StatelessWidget {
       ),
       drawer: const MyDrawer(),
       body: ListView.builder(
-        itemCount: chapters.length,
-        itemBuilder: (context, index) => MyCard(
-          chapter: chapters[index],
-        ),
-      ),
+          itemCount: chapters.length,
+          itemBuilder: (context, index) {
+            var chapter = chapters[index];
+            return InkWell(
+              child: MyCard(
+                chapter: chapters[index],
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChapterScreen(
+                      chapter: chapter,
+                    ),
+                  ),
+                );
+              },
+            );
+          }),
     );
   }
 }
