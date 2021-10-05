@@ -41,6 +41,11 @@ dependencies:
   antdesign_icons: ^0.0.3
   url_launcher: ^6.0.12
   fluttertoast: ^8.0.8
+  flutter_native_splash: ^1.2.4
+
+flutter_native_splash:
+  color: '#39213a'
+  image: 'assets/images/launch_image.png'
 
 dev_dependencies:
   flutter_test:
