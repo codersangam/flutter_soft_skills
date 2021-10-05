@@ -1,21 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
+import 'package:soft_skills/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'custom_tile.dart';
 import 'package:antdesign_icons/antdesign_icons.dart';
 
-class MyDrawer extends StatelessWidget {
+class MyDrawer extends StatefulWidget {
   const MyDrawer({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<MyDrawer> createState() => _MyDrawerState();
+}
+
+class _MyDrawerState extends State<MyDrawer> {
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Drawer(
         child: Container(
+          padding: const EdgeInsets.symmetric(vertical: defaultPadding / 2),
           color: Colors.purple,
           child: Column(
             children: [
