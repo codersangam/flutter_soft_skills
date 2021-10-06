@@ -1,15 +1,11 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 import 'package:flutter/material.dart';
-import 'package:soft_skills/components/my_card.dart';
 import 'package:soft_skills/components/my_drawer.dart';
-import 'package:soft_skills/screens/chapter1.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
-import 'chapter2.dart';
-import 'chapter3.dart';
-import 'chapter4.dart';
-import 'chapter5.dart';
+import 'chapters_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
@@ -41,107 +37,29 @@ class _HomeScreenState extends State<HomeScreen> {
     return true;
   }
 
+  final _drawerController = ZoomDrawerController();
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: _onBackPressed,
       child: Scaffold(
-        appBar: AppBar(
-          title: 'Soft Skills'.text.make(),
+        // drawer: const MyDrawer(),
+        body: ZoomDrawer(
+          controller: _drawerController,
+          style: DrawerStyle.Style1,
+          menuScreen: const MyDrawer(),
+          mainScreen: ChaptersPage(
+            _drawerController,
+          ),
+          borderRadius: 24.0,
+          showShadow: true,
+          angle: 0.0,
+          backgroundColor: Vx.gray300,
+          slideWidth: MediaQuery.of(context).size.width * 0.65,
+          openCurve: Curves.fastOutSlowIn,
+          closeCurve: Curves.bounceIn,
         ),
-        drawer: const MyDrawer(),
-        body: const ChaptersPage(),
-      ),
-    );
-  }
-}
-
-class ChaptersPage extends StatelessWidget {
-  const ChaptersPage({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          InkWell(
-            child: const MyCard(
-              title: 'Chapter 1',
-              subtitle: 'What Happens in Company Placement Process?',
-              image: 'assets/images/company.png',
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChapterScreen(),
-                ),
-              );
-            },
-          ),
-          InkWell(
-            child: const MyCard(
-              title: 'Chapter 2',
-              subtitle: 'Group Discussion',
-              image: 'assets/images/gd.png',
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const Chapter2(),
-                ),
-              );
-            },
-          ),
-          InkWell(
-            child: const MyCard(
-              title: 'Chapter 3',
-              subtitle: 'HR Interview Questions for Freshers',
-              image: 'assets/images/question.png',
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const Chapter3(),
-                ),
-              );
-            },
-          ),
-          InkWell(
-            child: const MyCard(
-              title: 'Chapter 4',
-              subtitle: 'Do\'s and Dont\'s in Interview',
-              image: 'assets/images/dress.png',
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const Chapter4(),
-                ),
-              );
-            },
-          ),
-          InkWell(
-            child: const MyCard(
-              title: 'Chapter 5',
-              subtitle: 'Body Language and Interview Behaviour',
-              image: 'assets/images/body.png',
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const Chapter5(),
-                ),
-              );
-            },
-          ),
-        ],
       ),
     );
   }
