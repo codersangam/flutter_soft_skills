@@ -1,4 +1,4 @@
-package com.example.soft_skills
+package com.softskills.codersangam
 
 import io.flutter.embedding.android.FlutterActivity
 

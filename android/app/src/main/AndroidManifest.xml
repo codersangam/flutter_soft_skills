@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.soft_skills">
+    package="com.softskills.codersangam">
    <application
-        android:label="soft_skills"
+        android:label="Soft Skills"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
