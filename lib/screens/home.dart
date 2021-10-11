@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 import 'package:flutter/material.dart';
-import 'package:soft_skills/components/my_drawer.dart';
+import 'package:soft_skills/widgets/my_drawer.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';

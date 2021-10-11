@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:soft_skills/components/my_card.dart';
+import 'package:soft_skills/widgets/my_card.dart';
 
 import 'chapter1.dart';
 import 'chapter2.dart';
