@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:soft_skills/constants.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class PrivacyPolicyPage extends StatelessWidget {
@@ -47,6 +48,12 @@ class PrivacyPolicyPage extends StatelessWidget {
               'Contact Us'.text.bold.make(),
               'If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at admin@codersangam.com.'
                   .text
+                  .make(),
+              10.heightBox,
+              'Credit'.text.bold.color(primaryColor).make(),
+              'All the assets provided in the app belong to ABC - Technology Training & Upskilling, Bengaluru, Karnataka, India'
+                  .text
+                  .color(primaryColor)
                   .make(),
             ],
           ),
